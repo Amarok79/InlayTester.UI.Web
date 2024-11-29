@@ -1,0 +1,111 @@
+﻿@page "/users"
+@inherits AxShellComponentBase
+
+<PageTitle>@Loc["users.list.page-header"]</PageTitle>
+
+<AxPageContent>
+    <Header>
+
+        <AxHeader Icon="@AppIcons.Users"
+                  IsBusy="@IsBusy"
+                  Text="@Loc["users.list.page-header"]">
+        </AxHeader>
+
+        <AxListSearchHeader @bind-SearchText="@mSearchText"
+                            ButtonDisabled="@(!CanCreate())"
+                            ButtonText="@Loc["users.list.create-button"]"
+                            ButtonTooltip="@Loc["users.list.create-tooltip"]"
+                            Disabled="@IsBusy"
+                            OnButtonClick="@OnCreate"
+                            @ref="@mSearchHeader"
+                            SearchPlaceholder="@Loc["users.list.search-hint"]"
+                            SearchTooltip="@Loc["users.list.search-tooltip"]">
+        </AxListSearchHeader>
+
+    </Header>
+    <Content>
+
+        @if (mUsers != null && mUsers.Count > 0)
+        {
+            <MudDataGrid Elevation="0"
+                         FixedHeader="true"
+                         Hover="true"
+                         Items="@mUsers"
+                         Outlined="true"
+                         QuickFilter="@_FilterUsers"
+                         SortMode="SortMode.Single"
+                         T="User"
+                         Virtualize="true">
+                <Columns>
+                    <PropertyColumn CellClass="it-cell-primary"
+                                    HeaderClass="it-column-header"
+                                    Property="x => x.Name"
+                                    ShowColumnOptions="false"
+                                    Title="@Loc["users.list.column-name"]">
+                    </PropertyColumn>
+                    <PropertyColumn CellClass="it-cell-wrap"
+                                    HeaderClass="it-column-header"
+                                    Property="x => x.RolesAsText()"
+                                    ShowColumnOptions="false"
+                                    Title="@Loc["users.list.column-roles"]">
+                    </PropertyColumn>
+                    <PropertyColumn CellClass="it-cell-nowrap"
+                                    HeaderClass="it-column-header"
+                                    Property="x => x.ModifiedOn"
+                                    ShowColumnOptions="false"
+                                    Title="@Loc["users.list.column-modified-on"]">
+                    </PropertyColumn>
+                    <PropertyColumn CellClass="it-cell-nowrap"
+                                    HeaderClass="it-column-header"
+                                    Property="x => x.ModifiedBy"
+                                    ShowColumnOptions="false"
+                                    Title="@Loc["users.list.column-modified-by"]">
+                    </PropertyColumn>
+                    <TemplateColumn>
+                        <CellTemplate>
+                            <MudStack Row="true">
+                                <MudTooltip Text="@Loc["users.list.edit-tooltip"]">
+                                    <MudIconButton Disabled="@(!CanEdit(context.Item) || IsBusy)"
+                                                   Icon="@AppIcons.Edit"
+                                                   OnClick="@(() => OnEdit(context.Item))"
+                                                   Size="Size.Small"
+                                                   Style="padding: 5px;">
+                                    </MudIconButton>
+                                </MudTooltip>
+                                <MudTooltip Text="@Loc["users.list.delete-tooltip"]">
+                                    <MudIconButton Disabled="@(!CanDelete(context.Item) || IsBusy)"
+                                                   Icon="@AppIcons.Delete"
+                                                   OnClick="@(() => OnDelete(context.Item))"
+                                                   Size="Size.Small"
+                                                   Style="padding: 5px;">
+                                    </MudIconButton>
+                                </MudTooltip>
+                            </MudStack>
+                        </CellTemplate>
+                    </TemplateColumn>
+                </Columns>
+            </MudDataGrid>
+        }
+
+    </Content>
+</AxPageContent>
+
+
+<style>
+    .it-column-header {
+        white-space: nowrap;
+    }
+
+    .it-cell-nowrap {
+        white-space: nowrap;
+    }
+
+    .it-cell-wrap {
+        white-space: normal;
+    }
+
+    .it-cell-primary {
+        color: var(--mud-palette-secondary) !important;
+        white-space: nowrap;
+    }
+</style>

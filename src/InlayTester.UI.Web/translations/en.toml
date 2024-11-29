@@ -1,0 +1,96 @@
+﻿
+
+
+
+
+label-ok = ":OK"
+label-cancel = ":CANCEL"
+label-yes = ":YES"
+label-no = ":NO"
+
+
+
+msgbox-general-error-title = ":UNEXPECTED ERROR"
+msgbox-general-error-text = ":Error: {0}\r\n\r\n{1}"
+
+
+
+[shell.dialogs.error]
+label-title = "UNEXPECTED ERROR"
+label-error-code = "Error: {0}"
+button-accept = "OK"
+
+[shell.dialogs.confirmation.delete]
+button-accept = "DELETE"
+button-cancel = "KEEP"
+
+[shell]
+menu-home = "Home"
+menu-run = "Test Run"
+menu-substrates = "Substrates"
+menu-chips = "Chips"
+menu-distances = "Distances"
+menu-calibrate = "Calibrate"
+menu-users = "Users"
+menu-settings = "Settings"
+
+[shell.validations]
+validation-error-required = "Required"
+
+
+[users.list]
+page-header = "Users"
+create-button = "CREATE"
+create-tooltip = "Alt + T"
+search-hint = "Search"
+search-tooltip = "Alt + F"
+column-name = "Name"
+column-roles = "Roles"
+column-modified-on = "Modified on"
+column-modified-by = "Modified by"
+edit-tooltip = "Edit"
+delete-tooltip = "Delete"
+delete-title = "Delete '{0}' ?"
+delete-message = "You are about to permanently delete this user."
+
+[users.edit]
+page-header-new = "Create user"
+page-header-edit = "Edit user"
+
+label-name = "Name"
+label-password1 = "Password"
+label-password2 = "Confirm password"
+label-roles = "Roles"
+label-machine-operator = "Machine Operator"
+label-machine-setter = "Machine Setter"
+label-administrator = "Administrator"
+label-notes = "Notes"
+
+hint-name = "Enter your name"
+hint-password1 = "Enter your password"
+hint-password2 = "Re-enter your password"
+hint-notes = "Optional notes"
+
+accept-button-new = "CREATE"
+accept-button-edit = "SAVE"
+cancel-button-new = "CANCEL"
+cancel-button-edit = "CANCEL"
+
+validation-error-password-mismatch = "Passwords must match"
+validation-error-role-required = "A single role is required"
+validation-error-name-exists = "A user with the same name already exists"
+
+[users.login]
+title-login = "Login"
+title-switch = "Switch user"
+label-name = "Name"
+label-password = "Password"
+button-accept = "LOGIN"
+button-cancel = "CANCEL"
+validation-error-password-wrong = "Password is wrong"
+
+[users.appbar]
+label-switch = "Switch user"
+label-login = "Login"
+label-logout = "Logout"
+tooltip = "Account"

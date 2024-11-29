@@ -1,0 +1,39 @@
+<Project>
+
+    <PropertyGroup>
+        <Version>0.1.0</Version>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Product>Inlay Tester</Product>
+        <Copyright>Copyright (c) 2025, Olaf Kober</Copyright>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <RootNamespace>InlayTester</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Nullable>Enable</Nullable>
+        <ImplicitUsings>Enable</ImplicitUsings>
+        <IsPackable>False</IsPackable>
+        <IsPublishable>False</IsPublishable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <OptimizeImplicitlyTriggeredBuild>True</OptimizeImplicitlyTriggeredBuild>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <RootDir>$([MSBuild]::NormalizeDirectory($(MSBuildThisFileDirectory)))</RootDir>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
+        <BaseOutputPath>$(RootDir)bin\tests\$(MSBuildProjectName)</BaseOutputPath>
+        <Nullable>Disable</Nullable>
+        <GenerateDocumentationFile>False</GenerateDocumentationFile>
+        <IsPackable>False</IsPackable>
+        <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+</Project>

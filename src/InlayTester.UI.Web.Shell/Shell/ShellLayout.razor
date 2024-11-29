@@ -1,0 +1,38 @@
+﻿<MudThemeProvider IsDarkMode="@IsDarkTheme"
+                  Theme="@Theme"/>
+
+<MudPopoverProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+
+    <MudAppBar Elevation="2">
+        <MudIconButton Color="Color.Inherit"
+                       Edge="Edge.Start"
+                       Icon="@AppIcons.Menu"
+                       OnClick="@OnToggleDrawer"/>
+        <MudText Class="ml-3"
+                 Typo="Typo.h5">
+            @Title
+        </MudText>
+        <MudSpacer/>
+        @AppBarRightContent
+    </MudAppBar>
+
+    <MudDrawer @bind-Open="@mIsDrawerOpen"
+               ClipMode="DrawerClipMode.Always"
+               Elevation="4"
+               Variant="DrawerVariant.Mini"
+               Width="200px">
+
+        <MudNavMenu Bordered="true">
+            @NavMenuContent
+        </MudNavMenu>
+    </MudDrawer>
+
+    <MudMainContent Class="mt-16 px-16 py-8">
+        @ChildContent
+    </MudMainContent>
+
+</MudLayout>

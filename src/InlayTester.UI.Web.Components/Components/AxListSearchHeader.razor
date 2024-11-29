@@ -1,0 +1,38 @@
+﻿<MudStack AlignItems="AlignItems.Stretch"
+          Class="mb-4"
+          Row="true">
+
+    <MudTooltip Disabled="@Disabled"
+                RootClass="d-flex flex-auto"
+                ShowOnClick="false"
+                ShowOnFocus="false"
+                Text="@SearchTooltip">
+        <MudTextField Adornment="Adornment.Start"
+                      AdornmentIcon="@AppIcons.Search"
+                      Class="mr-8 my-0"
+                      Clearable="true"
+                      Disabled="@Disabled"
+                      Immediate="true"
+                      Margin="Margin.Dense"
+                      MaxLength="100"
+                      Placeholder="@SearchPlaceholder"
+                      @ref="mSearchField"
+                      T="String"
+                      TextChanged="OnSearchTextChanged"
+                      Variant="Variant.Outlined">
+        </MudTextField>
+    </MudTooltip>
+
+    <MudTooltip Disabled="@(Disabled || ButtonDisabled)"
+                Text="@ButtonTooltip">
+        <MudButton Color="Color.Primary"
+                   Disabled="@(Disabled || ButtonDisabled)"
+                   OnClick="OnButtonClick"
+                   Size="Size.Medium"
+                   Style="height: 100%"
+                   Variant="Variant.Filled">
+            @ButtonText
+        </MudButton>
+    </MudTooltip>
+
+</MudStack>

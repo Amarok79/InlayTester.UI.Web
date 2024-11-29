@@ -1,0 +1,42 @@
+﻿<MudDialog>
+    <TitleContent>
+        <AxHeader Color="Color.Error"
+                  Icon="@AppIcons.Error"
+                  Text="@(Title ?? Loc["shell.dialogs.error.label-title"])">
+        </AxHeader>
+    </TitleContent>
+    <DialogContent>
+        @if (!String.IsNullOrEmpty(ErrorCode))
+        {
+            <MudText Class="mb-4">@Loc["shell.dialogs.error.label-error-code", ErrorCode]</MudText>
+        }
+        <MudText Typo="Typo.body2">@Message</MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Error"
+                   OnClick="OnAccept"
+                   Variant="Variant.Filled">
+            @Loc["shell.dialogs.error.button-accept"]
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+
+<style>
+    .mud-dialog {
+        border: 2px solid var(--mud-palette-error);
+        padding: 20px 30px;
+    }
+
+    .mud-dialog .mud-dialog-title {
+        padding-bottom: 0;
+    }
+
+    .mud-dialog .mud-dialog-actions {
+        padding-top: 20px;
+    }
+
+    .mud-button {
+        min-width: 80px;
+    }
+</style>

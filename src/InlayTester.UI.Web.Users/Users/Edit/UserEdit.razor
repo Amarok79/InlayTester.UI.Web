@@ -1,0 +1,139 @@
+﻿@page "/users/{id}"
+@inherits AxShellComponentBase
+
+<PageTitle>@PageTitle</PageTitle>
+
+<AxPageContent>
+    <Header>
+
+        <MudStack Row="false"
+                  Spacing="0">
+
+            <AxHeader Icon="@AppIcons.Users"
+                      IsBusy="@IsBusy"
+                      Text="@PageTitle">
+            </AxHeader>
+
+            <EditForm EditContext="@mEditContext"
+                      FormName="Users-Edit"
+                      OnSubmit="OnSubmit">
+
+                <DataAnnotationsValidator/>
+
+                <MudStack Row="false"
+                          Spacing="0"
+                          Wrap="Wrap.NoWrap">
+
+                    <MudTextField @bind-Value="mViewModel.Name"
+                                  Clearable="true"
+                                  Disabled="@(IsBusy || !mCanEditName)"
+                                  For="@(() => mViewModel.Name)"
+                                  Immediate="true"
+                                  InputType="InputType.Text"
+                                  Label="@Loc["users.edit.label-name"]"
+                                  Margin="Margin.Dense"
+                                  MaxLength="@mViewModel.MaxNameLength"
+                                  Placeholder="@Loc["users.edit.hint-name"]"
+                                  T="String"
+                                  Variant="Variant.Outlined">
+                    </MudTextField>
+
+                    <MudTextField @bind-Value="mViewModel.Password1"
+                                  Class="mt-8"
+                                  Disabled="@IsBusy"
+                                  For="@(() => mViewModel.Password1)"
+                                  Immediate="false"
+                                  InputType="InputType.Password"
+                                  Label="@Loc["users.edit.label-password1"]"
+                                  Margin="Margin.Dense"
+                                  MaxLength="@mViewModel.MaxPasswordLength"
+                                  Placeholder="@Loc["users.edit.hint-password1"]"
+                                  T="String"
+                                  Variant="Variant.Outlined">
+                    </MudTextField>
+
+                    <MudTextField @bind-Value="mViewModel.Password2"
+                                  Class="mt-4"
+                                  Disabled="@IsBusy"
+                                  For="@(() => mViewModel.Password2)"
+                                  Immediate="false"
+                                  InputType="InputType.Password"
+                                  Label="@Loc["users.edit.label-password2"]"
+                                  Margin="Margin.Dense"
+                                  MaxLength="@mViewModel.MaxPasswordLength"
+                                  Placeholder="@Loc["users.edit.hint-password2"]"
+                                  T="String"
+                                  Variant="Variant.Outlined">
+                    </MudTextField>
+
+                    <MudField Class="mt-8"
+                              Disabled="@(!mCanEditRoles)"
+                              Error="@(mViewModel.RolesCount == 0)"
+                              ErrorText="@Loc["users.edit.validation-error-role-required"]"
+                              Label="@Loc["users.edit.label-roles"]"
+                              Margin="Margin.Dense"
+                              Variant="Variant.Outlined">
+                        <MudStack Spacing="0"
+                                  Wrap="Wrap.NoWrap">
+                            <MudCheckBox @bind-Value="@mViewModel.IsOperator"
+                                         Dense="true"
+                                         Disabled="@(IsBusy || !mCanEditRoles)"
+                                         Label="@Loc["users.edit.label-machine-operator"]"
+                                         T="Boolean">
+                            </MudCheckBox>
+                            <MudCheckBox @bind-Value="@mViewModel.IsSetter"
+                                         Dense="true"
+                                         Disabled="@(IsBusy || !mCanEditRoles)"
+                                         Label="@Loc["users.edit.label-machine-setter"]"
+                                         T="Boolean">
+                            </MudCheckBox>
+                            <MudCheckBox @bind-Value="@mViewModel.IsAdministrator"
+                                         Dense="true"
+                                         Disabled="@(IsBusy || !mCanEditRoles)"
+                                         Label="@Loc["users.edit.label-administrator"]"
+                                         T="Boolean">
+                            </MudCheckBox>
+                        </MudStack>
+                    </MudField>
+
+                    <MudTextField Class="mt-8"
+                                  Disabled="@IsBusy"
+                                  InputType="InputType.Text"
+                                  Label="@Loc["users.edit.label-notes"]"
+                                  Lines="3"
+                                  Margin="Margin.Dense"
+                                  MaxLength="@mViewModel.MaxNotesLength"
+                                  Placeholder="@Loc["users.edit.hint-notes"]"
+                                  T="String"
+                                  Variant="Variant.Outlined">
+                    </MudTextField>
+
+                    <MudStack Class="mt-4"
+                              Justify="Justify.FlexEnd"
+                              Row="true"
+                              Spacing="4">
+
+                        <MudButton Color="Color.Default"
+                                   Disabled="@IsBusy"
+                                   OnClick="OnDiscard"
+                                   Size="Size.Medium"
+                                   Variant="Variant.Filled">
+                            @ButtonCancel
+                        </MudButton>
+                        <MudButton Color="Color.Primary"
+                                   Disabled="@(!CanSubmit() || IsBusy)"
+                                   OnClick="OnSubmit"
+                                   Size="Size.Medium"
+                                   Variant="Variant.Filled">
+                            @ButtonAccept
+                        </MudButton>
+
+                    </MudStack>
+
+                </MudStack>
+            </EditForm>
+
+        </MudStack>
+
+    </Header>
+</AxPageContent>

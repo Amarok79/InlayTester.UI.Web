@@ -1,0 +1,16 @@
+root = true
+
+# C# files
+[*.cs]
+
+dotnet_diagnostic.ca1062.severity = none
+dotnet_diagnostic.ca1515.severity = none
+dotnet_diagnostic.ca1707.severity = none
+dotnet_diagnostic.ca1720.severity = none
+dotnet_diagnostic.ca1805.severity = none
+dotnet_diagnostic.ca1812.severity = none
+dotnet_diagnostic.ca1815.severity = none
+dotnet_diagnostic.ca1822.severity = none
+dotnet_diagnostic.ca1848.severity = none
+dotnet_diagnostic.ca2007.severity = none
+dotnet_diagnostic.ca2225.severity = none

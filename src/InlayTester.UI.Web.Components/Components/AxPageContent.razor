@@ -1,0 +1,36 @@
+﻿<div class="it-page-box">
+    <div class="it-page-header">
+        @Header
+    </div>
+    <div class="it-page-content">
+        @Content
+    </div>
+    <div class="it-page-footer">
+        @Footer
+    </div>
+</div>
+
+
+<style>
+    .it-page-box {
+        display: flex;
+        flex-flow: column;
+        height: 82vh;
+    }
+
+    .it-page-box .it-page-header {
+        flex: 0 1 auto;
+    }
+
+    .it-page-box .it-page-content {
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .it-page-box .it-page-footer {
+        flex: 0 1 auto;
+    }
+</style>

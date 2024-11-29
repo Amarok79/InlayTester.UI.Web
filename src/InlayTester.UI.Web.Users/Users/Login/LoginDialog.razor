@@ -1,0 +1,99 @@
+﻿@inherits AxShellComponentBase
+
+<MudDialog>
+    <TitleContent>
+        <AxHeader Color="Color.Info"
+                  Icon="@AppIcons.UserLogin"
+                  Text="@Title">
+        </AxHeader>
+    </TitleContent>
+    <DialogContent>
+        <MudStack Row="false"
+                  Spacing="0">
+            <EditForm EditContext="@mEditContext"
+                      FormName="Users-Login"
+                      OnSubmit="OnAccept">
+
+                <DataAnnotationsValidator/>
+
+                <MudStack Row="false"
+                          Spacing="0"
+                          Style="min-width: 400px"
+                          Wrap="Wrap.NoWrap">
+
+                    <MudSelect @bind-Value="mViewModel.SelectedUser"
+                               Disabled="@IsBusy"
+                               For="@(() => mViewModel.SelectedUser!)"
+                               Label="@Loc["users.login.label-name"]"
+                               Margin="Margin.Dense"
+                               ShrinkLabel="true"
+                               T="User"
+                               ToStringFunc="user => user?.Name"
+                               Variant="Variant.Outlined">
+                        @foreach (var user in mViewModel.Users)
+                        {
+                            <MudSelectItem Value="@user"/>
+                        }
+                    </MudSelect>
+
+                    <MudTextField @bind-Value="mViewModel.Password"
+                                  Class="mt-8"
+                                  Disabled="@IsBusy"
+                                  For="@(() => mViewModel.Password)"
+                                  Immediate="false"
+                                  InputType="InputType.Password"
+                                  Label="@Loc["users.login.label-password"]"
+                                  Margin="Margin.Dense"
+                                  MaxLength="@mViewModel.MaxPasswordLength"
+                                  ShrinkLabel="true"
+                                  T="String"
+                                  Variant="Variant.Outlined">
+                    </MudTextField>
+
+                </MudStack>
+            </EditForm>
+        </MudStack>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Default"
+                   Disabled="@IsBusy"
+                   OnClick="OnCancel"
+                   Variant="Variant.Filled">
+            @(CancelButton ?? Loc["users.login.button-cancel"])
+        </MudButton>
+        <MudButton Color="Color.Info"
+                   Disabled="@IsBusy"
+                   OnClick="OnAccept"
+                   Variant="Variant.Filled">
+            @(AcceptButton ?? Loc["users.login.button-accept"])
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+
+<style>
+    .mud-dialog {
+        border: 2px solid var(--mud-palette-info);
+        padding: 20px 30px;
+    }
+
+    .mud-dialog .mud-dialog-title {
+        padding-bottom: 0;
+    }
+
+    .mud-dialog .mud-dialog-actions {
+        padding-top: 20px;
+    }
+
+    .mud-button {
+        min-width: 80px;
+    }
+
+    .mud-dialog .mud-dialog-content {
+        margin: 0px 0px;
+    }
+
+    .mud-dialog .mud-dialog-actions {
+        padding: 20px 24px 8px;
+    }
+</style>

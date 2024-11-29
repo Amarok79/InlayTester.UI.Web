@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <RootNamespace>InlayTester.UI.Web</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MudBlazor" Version="8.5.1" />
+        <PackageReference Include="System.Reactive" Version="6.0.1" />
+        <PackageReference Include="Toolbelt.Blazor.HotKeys2" Version="6.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\InlayTester.UI.Web.Shell.Abstractions\InlayTester.UI.Web.Shell.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

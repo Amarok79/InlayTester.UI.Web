@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <RootNamespace>InlayTester.UI.Web</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MudBlazor" Version="8.5.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\InlayTester.UI.Web.Theme\InlayTester.UI.Web.Theme.csproj" />
+    </ItemGroup>
+
+</Project>

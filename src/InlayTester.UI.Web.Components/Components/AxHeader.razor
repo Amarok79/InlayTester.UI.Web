@@ -1,0 +1,23 @@
+﻿<MudStack AlignItems="AlignItems.Center"
+          Class="mb-4"
+          Justify="Justify.FlexStart"
+          Row="true">
+
+    <MudIcon Color="@Color"
+             Icon="@Icon"
+             Size="Size.Large">
+    </MudIcon>
+
+    <MudText Color="@Color"
+             Typo="Typo.h5">
+        @Text
+    </MudText>
+
+    @if (IsBusy)
+    {
+        <MudProgressCircular Color="Color.Info"
+                             Indeterminate="true"
+                             Size="Size.Small">
+        </MudProgressCircular>
+    }
+</MudStack>

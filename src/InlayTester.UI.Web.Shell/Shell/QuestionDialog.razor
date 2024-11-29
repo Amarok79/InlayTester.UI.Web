@@ -1,0 +1,43 @@
+﻿<MudDialog>
+    <TitleContent>
+        <AxHeader Color="Color.Warning"
+                  Icon="@AppIcons.Question"
+                  Text="@Title">
+        </AxHeader>
+    </TitleContent>
+    <DialogContent>
+        <MudText Typo="Typo.body2">@Message</MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Default"
+                   OnClick="OnCancel"
+                   Variant="Variant.Filled">
+            @(CancelButton ?? Loc["shell.dialogs.confirmation.delete.button-cancel"])
+        </MudButton>
+        <MudButton Color="Color.Warning"
+                   OnClick="OnAccept"
+                   Variant="Variant.Filled">
+            @(AcceptButton ?? Loc["shell.dialogs.confirmation.delete.button-accept"])
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+
+<style>
+    .mud-dialog {
+        border: 2px solid var(--mud-palette-warning);
+        padding: 20px 30px;
+    }
+
+    .mud-dialog .mud-dialog-title {
+        padding-bottom: 0;
+    }
+
+    .mud-dialog .mud-dialog-actions {
+        padding-top: 20px;
+    }
+
+    .mud-button {
+        min-width: 80px;
+    }
+</style>

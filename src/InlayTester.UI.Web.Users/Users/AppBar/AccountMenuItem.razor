@@ -1,0 +1,29 @@
+﻿@inherits AxShellComponentBase
+
+<MudTooltip Placement="Placement.Bottom"
+            Text="@Loc["users.appbar.tooltip"]">
+    <MudMenu AnchorOrigin="Origin.BottomRight"
+             Class="mr-4"
+             Icon="@(mUser != null ? null : Icons.Material.Filled.AccountCircle)"
+             Label="@mUser?.Name"
+             Size="Size.Medium"
+             StartIcon="@(mUser != null ? Icons.Material.Filled.AccountCircle : null)"
+             TransformOrigin="Origin.TopRight"
+             Variant="Variant.Text">
+        @if (mUser != null)
+        {
+            <MudMenuItem Icon="@Icons.Material.Filled.SwitchAccount"
+                         Label="@Loc["users.appbar.label-switch"]"
+                         OnClick="OnSwitch"/>
+            <MudMenuItem Icon="@Icons.Material.Filled.Logout"
+                         Label="@Loc["users.appbar.label-logout"]"
+                         OnClick="OnLogout"/>
+        }
+        else
+        {
+            <MudMenuItem Icon="@Icons.Material.Filled.Login"
+                         Label="@Loc["users.appbar.label-login"]"
+                         OnClick="OnLogin"/>
+        }
+    </MudMenu>
+</MudTooltip>

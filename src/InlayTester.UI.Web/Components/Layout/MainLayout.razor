@@ -1,0 +1,76 @@
+﻿@using InlayTester.UI.Web.Users.AppBar
+@inherits LayoutComponentBase
+
+<ShellLayout IsDarkTheme="@mIsDarkTheme"
+             Theme="@mTheme"
+             Title="Inlay Tester">
+
+    <NavMenuContent>
+        <AxNavMenuItem Href=""
+                       Icon="@AppIcons.Home"
+                       Match="NavLinkMatch.All"
+                       Text="@Loc["shell.menu-home"]">
+        </AxNavMenuItem>
+        <AxNavMenuItem Disabled="true"
+                       Icon="@AppIcons.TestRun"
+                       Text="@Loc["shell.menu-run"]">
+        </AxNavMenuItem>
+
+        <MudDivider/>
+
+        <AxNavMenuItem Disabled="true"
+                       Icon="@AppIcons.Substrates"
+                       Text="@Loc["shell.menu-substrates"]">
+        </AxNavMenuItem>
+        <AxNavMenuItem Disabled="true"
+                       Icon="@AppIcons.Chips"
+                       Text="@Loc["shell.menu-chips"]">
+        </AxNavMenuItem>
+        <AxNavMenuItem Disabled="true"
+                       Icon="@AppIcons.Distances"
+                       Text="@Loc["shell.menu-distances"]">
+        </AxNavMenuItem>
+        <AxNavMenuItem Disabled="true"
+                       Icon="@AppIcons.Calibrate"
+                       Text="@Loc["shell.menu-calibrate"]">
+        </AxNavMenuItem>
+
+        <MudDivider/>
+
+        <AxNavMenuItem Href="users"
+                       Icon="@AppIcons.Users"
+                       Text="@Loc["shell.menu-users"]">
+        </AxNavMenuItem>
+        <AxNavMenuItem Disabled="true"
+                       Icon="@AppIcons.Settings"
+                       Text="@Loc["shell.menu-settings"]">
+        </AxNavMenuItem>
+    </NavMenuContent>
+
+    <ChildContent>
+        @Body
+    </ChildContent>
+
+    <AppBarRightContent>
+        <AccountMenuItem/>
+
+        <MudTooltip Placement="Placement.Bottom"
+                    Text="Theme">
+            <MudToggleIconButton Color="Color.Inherit"
+                                 Icon="@Icons.Material.Outlined.LightMode"
+                                 ToggledChanged="OnToggleTheme">
+            </MudToggleIconButton>
+        </MudTooltip>
+
+    </AppBarRightContent>
+
+</ShellLayout>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a class="reload"
+       href="">
+        Reload
+    </a>
+    <a class="dismiss">🗙</a>
+</div>

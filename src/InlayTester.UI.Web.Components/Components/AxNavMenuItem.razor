@@ -1,0 +1,18 @@
+﻿<MudTooltip Disabled="@TooltipDisabled"
+            Placement="Placement.Right"
+            RootStyle="width: 100%"
+            Text="@Text">
+    <MudNavLink Disabled="@Disabled"
+                Href="@Href"
+                Icon="@Icon"
+                Match="@Match">
+        @Text
+    </MudNavLink>
+</MudTooltip>
+
+
+<style>
+    .mud-nav-link-text {
+        white-space: nowrap;
+    }
+</style>
