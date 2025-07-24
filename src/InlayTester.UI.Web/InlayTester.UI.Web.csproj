@@ -12,10 +12,19 @@
     </ItemGroup>
 
     <PropertyGroup>
-        <IsPublishable Condition="'$(RuntimeIdentifier)' != ''">True</IsPublishable>
+        <IsPublishable>True</IsPublishable>
         <PublishDir>$(RootDir)out\$(RuntimeIdentifier)</PublishDir>
-        <PublishReadyToRun>True</PublishReadyToRun>
-        <PublishSelfContained>True</PublishSelfContained>
+        <PublishReadyToRun>False</PublishReadyToRun>
+        <PublishSelfContained>False</PublishSelfContained>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <EnableSdkContainerSupport>True</EnableSdkContainerSupport>
+        <EnableSdkContainerDebugging>True</EnableSdkContainerDebugging>
+        <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:9.0-bookworm-slim</ContainerBaseImage>
+        <ContainerRepository>amarok79/inlaytesteruiweb</ContainerRepository>
+        <DockerfileContext>..\..</DockerfileContext>
+        <UserSecretsId>62c3958a-5756-4e8d-812a-5b24379d9529</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>

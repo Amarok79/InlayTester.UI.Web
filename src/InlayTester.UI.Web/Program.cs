@@ -8,6 +8,7 @@ using InlayTester.UI.Web.Components;
 using InlayTester.UI.Web.Services;
 using InlayTester.UI.Web.Users;
 using InlayTester.UI.Web.Users.List;
+using Microsoft.AspNetCore.Localization;
 using MudBlazor.Services;
 using Serilog;
 using Toolbelt.Blazor.Extensions.DependencyInjection;
@@ -16,6 +17,7 @@ using Toolbelt.Blazor.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 // infrastructure
+builder.Services.AddLocalization();
 builder.Services.AddMudServices();
 builder.Services.AddHotKeys2();
 builder.Services.AddTomlStringLocalizer();
@@ -62,8 +64,13 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>()
-    .AddAdditionalAssemblies(typeof(UserList).Assembly)
-    .AddInteractiveServerRenderMode();
+app.UseRequestLocalization(
+    x => {
+        x.ApplyCurrentCultureToResponseHeaders = true;
+        x.DefaultRequestCulture                = new RequestCulture("en-US", "en");
+    }
+);
+
+app.MapRazorComponents<App>().AddAdditionalAssemblies(typeof(UserList).Assembly).AddInteractiveServerRenderMode();
 
 app.Run();
