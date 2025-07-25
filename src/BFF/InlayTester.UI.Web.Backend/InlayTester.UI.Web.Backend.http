@@ -1,0 +1,11 @@
+@InlayTester.UI.Web.Backend_HostAddress = http://localhost:5166
+
+GET {{InlayTester.UI.Web.Backend_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{InlayTester.UI.Web.Backend_HostAddress}}/todos/1
+Accept: application/json
+
+###
