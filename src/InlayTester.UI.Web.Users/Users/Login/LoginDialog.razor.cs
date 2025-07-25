@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2025, Olaf Kober <olaf.kober@outlook.com>
+// Copyright (c) 2025, Olaf Kober <olaf.kober@outlook.com>
 
 namespace InlayTester.UI.Web.Users.Login;
 
@@ -48,7 +48,7 @@ public partial class LoginDialog
                 mViewModel.Users        = users.OrderBy(x => x.Name).ToList();
                 mViewModel.SelectedUser = SessionManager.Current;
             },
-            () => Dialog?.Close(DialogResult.Ok(false))
+            () => Dialog?.Close(DialogResult.Cancel())
         );
     }
 
@@ -63,8 +63,7 @@ public partial class LoginDialog
                 if (!await RunAsync(
                         "USR121",
                         async () => {
-                            mViewModel.SelectedUser =
-                                await UserManager.GetUserAsync(mViewModel.SelectedUser.Id);
+                            mViewModel.SelectedUser = await UserManager.GetUserAsync(mViewModel.SelectedUser.Id);
                         }
                     ))
                 {
@@ -85,6 +84,6 @@ public partial class LoginDialog
 
     private void OnCancel()
     {
-        Dialog?.Close(DialogResult.Ok((User?)null));
+        Dialog?.Close(DialogResult.Cancel());
     }
 }
