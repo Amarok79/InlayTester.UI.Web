@@ -25,8 +25,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Container (.NET SDK)": {
-      "commandName": "SdkContainer",
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
       "environmentVariables": {
@@ -35,8 +35,8 @@
       },
       "publishAllPorts": false,
       "useSSL": true,
-      "httpPort": 8080,
-      "sslPort": 8081
+      "sslPort": 8081,
+      "httpPort": 8080
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",

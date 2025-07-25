@@ -20,23 +20,18 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <EnableSdkContainerSupport>True</EnableSdkContainerSupport>
-        <EnableSdkContainerDebugging>True</EnableSdkContainerDebugging>
-        <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:9.0-bookworm-slim</ContainerBaseImage>
-        <ContainerRepository>amarok79/inlaytesteruiweb</ContainerRepository>
-        <ContainerImageTags>latest;$(Version)</ContainerImageTags>
-        <ContainerWorkingDirectory>/app/bin</ContainerWorkingDirectory>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <DockerfileContext>..\..</DockerfileContext>
+        <ContainerDevelopmentMode>Fast</ContainerDevelopmentMode>
+        <DockerDebuggeeWorkingDirectory>/app/bin</DockerDebuggeeWorkingDirectory>
+        <DockerFastModeProjectMountDirectory>/app</DockerFastModeProjectMountDirectory>
         <UserSecretsId>62c3958a-5756-4e8d-812a-5b24379d9529</UserSecretsId>
+        <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
     </PropertyGroup>
 
     <ItemGroup>
-        <ContainerPort Include="8080" />
-        <ContainerPort Include="8081" />
-    </ItemGroup>
-
-    <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="9.0.7" />
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
         <PackageReference Include="MudBlazor" Version="8.10.0" />
         <PackageReference Include="Serilog" Version="4.3.0" />
         <PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />

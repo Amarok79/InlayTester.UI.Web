@@ -29,7 +29,13 @@ builder.Services.AddSerilog(
         .Enrich.WithThreadId()
         .WriteTo.Async(
             x => x.File(
-                Path.Combine(AppContext.BaseDirectory, "..", "logs", "web", "InlayTester.UI..log"),
+                Path.Combine(
+                    AppContext.BaseDirectory,
+                    "..",
+                    "logs",
+                    "web",
+                    "InlayTester.UI..log"
+                ),
                 rollingInterval: RollingInterval.Day,
                 retainedFileCountLimit: 31,
                 rollOnFileSizeLimit: true,
@@ -42,7 +48,7 @@ builder.Services.AddSerilog(
             4096,
             true
         )
-        .WriteTo.Seq("http://localhost:5341")
+        .WriteTo.Seq("http://192.168.178.44:5341")
 );
 
 // application
