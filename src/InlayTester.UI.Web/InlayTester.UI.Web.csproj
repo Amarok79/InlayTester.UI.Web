@@ -25,6 +25,7 @@
         <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:9.0-bookworm-slim</ContainerBaseImage>
         <ContainerRepository>amarok79/inlaytesteruiweb</ContainerRepository>
         <ContainerImageTags>latest;$(Version)</ContainerImageTags>
+        <ContainerWorkingDirectory>/app/bin</ContainerWorkingDirectory>
         <DockerfileContext>..\..</DockerfileContext>
         <UserSecretsId>62c3958a-5756-4e8d-812a-5b24379d9529</UserSecretsId>
     </PropertyGroup>
