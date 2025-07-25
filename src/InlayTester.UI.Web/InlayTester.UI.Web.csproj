@@ -22,11 +22,10 @@
     <PropertyGroup>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <DockerfileContext>..\..</DockerfileContext>
-        <ContainerDevelopmentMode>Fast</ContainerDevelopmentMode>
         <DockerDebuggeeWorkingDirectory>/app/bin</DockerDebuggeeWorkingDirectory>
-        <DockerFastModeProjectMountDirectory>/app</DockerFastModeProjectMountDirectory>
+        <ContainerRepository>amarok79/inlaytesteruiweb</ContainerRepository>
+        <ContainerImageTags>latest;0.2.0</ContainerImageTags>
         <UserSecretsId>62c3958a-5756-4e8d-812a-5b24379d9529</UserSecretsId>
-        <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
     </PropertyGroup>
 
     <ItemGroup>
