@@ -1,7 +1,6 @@
 ﻿@using System.Reflection
 @using InlayTester.UI.Web.Components.Layout
 @using InlayTester.UI.Web.Users.List
-
 <Router AdditionalAssemblies="mApplicationAssemblies"
         AppAssembly="typeof(Program).Assembly">
     <Found Context="routeData">
@@ -14,8 +13,6 @@
 
 @code {
 
-    private IEnumerable<Assembly> mApplicationAssemblies = [
-        typeof(UserList).Assembly,
-    ];
+    private readonly IEnumerable<Assembly> mApplicationAssemblies = [ typeof(UserList).Assembly ];
 
 }

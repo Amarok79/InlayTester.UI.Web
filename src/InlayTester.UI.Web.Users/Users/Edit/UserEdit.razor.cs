@@ -24,11 +24,9 @@ public partial class UserEdit
 
     private String PageTitle => Loc[mIsNew ? "users.edit.page-header-new" : "users.edit.page-header-edit"];
 
-    private String ButtonAccept
-        => Loc[mIsNew ? "users.edit.accept-button-new" : "users.edit.accept-button-edit"];
+    private String ButtonAccept => Loc[mIsNew ? "users.edit.accept-button-new" : "users.edit.accept-button-edit"];
 
-    private String ButtonCancel
-        => Loc[mIsNew ? "users.edit.cancel-button-new" : "users.edit.cancel-button-edit"];
+    private String ButtonCancel => Loc[mIsNew ? "users.edit.cancel-button-new" : "users.edit.cancel-button-edit"];
 
 
     public UserEdit()

@@ -31,9 +31,7 @@ public abstract class ValidationAttributeBase : ValidationAttribute
     {
         return new ValidationResult(
             Localizer != null ? Localizer.GetText(errorMessage) : errorMessage.ResourceKey,
-            [
-                ctx.MemberName!,
-            ]
+            [ ctx.MemberName! ]
         );
     }
 

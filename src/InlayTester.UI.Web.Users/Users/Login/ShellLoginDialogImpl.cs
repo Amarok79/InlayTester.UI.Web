@@ -17,11 +17,7 @@ internal sealed class ShellLoginDialogImpl : IShellLoginDialog
     }
 
 
-    public async Task<User?> ShowLoginDialog(
-        String title,
-        String? acceptLabel = null,
-        String? cancelLabel = null
-    )
+    public async Task<User?> ShowLoginDialog(String title, String? acceptLabel = null, String? cancelLabel = null)
     {
         var param = new DialogParameters<LoginDialog>();
         param.Add(x => x.Title, title);

@@ -32,12 +32,7 @@ public partial class MainLayout
         return new MudTheme {
             Typography = new Typography {
                 Default = {
-                    FontFamily = [
-                        "Noto Sans",
-                        "Helvetica",
-                        "Arial",
-                        "sans-serif",
-                    ],
+                    FontFamily = [ "Noto Sans", "Helvetica", "Arial", "sans-serif" ],
                 },
             },
             PaletteLight     = _CreateLightPalette(),

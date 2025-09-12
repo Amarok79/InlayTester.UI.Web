@@ -127,11 +127,7 @@ public abstract class PageBase : ComponentBase,
         return RunAsync(errorCode, asyncAction, e => errorAction());
     }
 
-    protected async Task<Boolean> RunAsync(
-        String errorCode,
-        Func<Task> asyncAction,
-        Func<Exception, Task> errorAction
-    )
+    protected async Task<Boolean> RunAsync(String errorCode, Func<Task> asyncAction, Func<Exception, Task> errorAction)
     {
         try
         {
