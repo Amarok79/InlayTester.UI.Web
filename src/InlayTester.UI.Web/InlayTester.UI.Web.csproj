@@ -23,8 +23,8 @@
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <DockerfileContext>..\..</DockerfileContext>
         <DockerDebuggeeWorkingDirectory>/app/bin</DockerDebuggeeWorkingDirectory>
-        <ContainerRepository>amarok79/inlaytesteruiweb</ContainerRepository>
-        <ContainerImageTags>latest;0.2.0</ContainerImageTags>
+        <ContainerRepository>mcr.microsoft.com/dotnet/aspnet</ContainerRepository>
+        <ContainerImageTags>9.0-noble</ContainerImageTags>
         <UserSecretsId>62c3958a-5756-4e8d-812a-5b24379d9529</UserSecretsId>
     </PropertyGroup>
 
