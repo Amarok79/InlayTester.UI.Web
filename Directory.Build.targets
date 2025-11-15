@@ -1,4 +1,4 @@
-<Project>
+﻿<Project>
 
     <Target Name="ReportVersionToTeamCity"
             BeforeTargets="Build"
