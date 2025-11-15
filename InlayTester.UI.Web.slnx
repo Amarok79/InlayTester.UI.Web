@@ -1,0 +1,40 @@
+<Solution>
+  <Folder Name="/.Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="InlayTester.UI.Web.sln.DotSettings" />
+    <File Path="InlayTester.UI.Web.v3.ncrunchsolution" />
+    <File Path="LICENSE" />
+    <File Path="nuget.config" />
+    <File Path="_cleanup.cmd" />
+  </Folder>
+  <Folder Name="/Application/">
+    <Project Path="src/InlayTester.UI.Web/InlayTester.UI.Web.csproj" />
+  </Folder>
+  <Folder Name="/Application/Administer/" />
+  <Folder Name="/Application/Administer/Users/">
+    <Project Path="src/InlayTester.UI.Web.Users/InlayTester.UI.Web.Users.csproj" />
+  </Folder>
+  <Folder Name="/Application/Base/">
+    <Project Path="src/InlayTester.UI.Web.Components/InlayTester.UI.Web.Components.csproj" />
+    <Project Path="src/InlayTester.UI.Web.Theme/InlayTester.UI.Web.Theme.csproj" />
+    <Project Path="src/InlayTester.UI.Web.Validations/InlayTester.UI.Web.Validations.csproj" />
+  </Folder>
+  <Folder Name="/Application/Shell/">
+    <Project Path="src/InlayTester.UI.Web.Shell.Abstractions/InlayTester.UI.Web.Shell.Abstractions.csproj" />
+    <Project Path="src/InlayTester.UI.Web.Shell.Components/InlayTester.UI.Web.Shell.Components.csproj" />
+    <Project Path="src/InlayTester.UI.Web.Shell/InlayTester.UI.Web.Shell.csproj" />
+  </Folder>
+  <Folder Name="/Domain/">
+    <Project Path="src/InlayTester.Domain.Tests/InlayTester.Domain.Tests.csproj" />
+    <Project Path="src/InlayTester.Domain/InlayTester.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="src/InlayTester.Infrastructure.Gateway/InlayTester.Infrastructure.Gateway.csproj" />
+    <Project Path="src/InlayTester.Infrastructure.Services/InlayTester.Infrastructure.Services.csproj" />
+  </Folder>
+</Solution>
