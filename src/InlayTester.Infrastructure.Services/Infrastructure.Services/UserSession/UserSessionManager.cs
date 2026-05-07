@@ -20,9 +20,7 @@ internal sealed class UserSessionManager : IUserSessionManager,
 
     public Boolean Login(User user)
     {
-        user = user with {
-            Password = String.Empty,
-        };
+        user = user with { Password = String.Empty };
 
         Current = user;
 

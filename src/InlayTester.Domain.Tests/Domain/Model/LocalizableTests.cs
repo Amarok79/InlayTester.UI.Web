@@ -103,14 +103,7 @@ public class LocalizableTests
         Localizable sut = ("key", 123, "bbb", 12.3, "c", 999);
 
         Check.That(sut.ResourceKey).IsEqualTo("key");
-        Check.That(sut.Args)
-        .ContainsExactly(
-            123,
-            "bbb",
-            12.3,
-            "c",
-            999
-        );
+        Check.That(sut.Args).ContainsExactly(123, "bbb", 12.3, "c", 999);
         Check.That(sut.ToString()).IsEqualTo("[key]");
     }
 
@@ -120,14 +113,7 @@ public class LocalizableTests
         Localizable sut = ("key", [ 123, "bbb", 12.3, "c", 999 ]);
 
         Check.That(sut.ResourceKey).IsEqualTo("key");
-        Check.That(sut.Args)
-        .ContainsExactly(
-            123,
-            "bbb",
-            12.3,
-            "c",
-            999
-        );
+        Check.That(sut.Args).ContainsExactly(123, "bbb", 12.3, "c", 999);
         Check.That(sut.ToString()).IsEqualTo("[key]");
     }
 }

@@ -45,17 +45,12 @@ internal static class UserMappings
             Notes      = user.Notes,
             ModifiedBy = user.ModifiedBy,
             ModifiedOn = user.ModifiedOn.ToString("O"),
-            Roles = {
-                user.Roles.Select(x => x.ToApi()),
-            },
+            Roles      = { user.Roles.Select(x => x.ToApi()) },
         };
     }
 
     public static ApiRole ToApi(this Role role)
     {
-        return new ApiRole {
-            Id   = role.Id,
-            Name = role.Name,
-        };
+        return new ApiRole { Id = role.Id, Name = role.Name };
     }
 }

@@ -29,12 +29,7 @@ internal sealed class GrpcChannelProvider
     {
         var uri = configuration.GetValue("ServerUri", "http://localhost:8739")!;
 
-        var channel = GrpcChannel.ForAddress(
-            uri,
-            new GrpcChannelOptions {
-                Credentials = ChannelCredentials.Insecure,
-            }
-        );
+        var channel = GrpcChannel.ForAddress(uri, new GrpcChannelOptions { Credentials = ChannelCredentials.Insecure });
 
         mLogger.LogDebug("Created gRPC channel to {Uri}", uri);
 

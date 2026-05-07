@@ -31,14 +31,7 @@ public class UserTests
     [Test]
     public void Usage()
     {
-        var now = new DateTime(
-            2024,
-            12,
-            13,
-            11,
-            22,
-            33
-        );
+        var now = new DateTime(2024, 12, 13, 11, 22, 33);
 
         var su = new User(User.SupervisorId, "supervisor") {
             Password   = "ppp",
@@ -83,7 +76,8 @@ public class UserTests
                     new Role(Role.AdministratorId, "a"), new Role(Role.MachineSetterId, "s"),
                     new Role(Role.MachineOperatorId, "o"),
                 ]
-            ) };
+            ),
+        };
 
         Check.That(su.RolesAsText()).IsEqualTo("o, s, a");
     }
@@ -91,18 +85,9 @@ public class UserTests
     [Test, SetCulture("en-US")]
     public void ModifiedAsText_On()
     {
-        var now = new DateTime(
-            2024,
-            12,
-            13,
-            11,
-            22,
-            33
-        );
+        var now = new DateTime(2024, 12, 13, 11, 22, 33);
 
-        var su = new User(User.SupervisorId, "supervisor") {
-            ModifiedOn = now,
-        };
+        var su = new User(User.SupervisorId, "supervisor") { ModifiedOn = now };
 
         Check.That(su.ModifiedAsText()).IsEqualTo("12/13/2024 11:22:33 AM");
     }
@@ -110,19 +95,9 @@ public class UserTests
     [Test, SetCulture("en-US")]
     public void ModifiedAsText_On_And_By()
     {
-        var now = new DateTime(
-            2024,
-            12,
-            13,
-            11,
-            22,
-            33
-        );
+        var now = new DateTime(2024, 12, 13, 11, 22, 33);
 
-        var su = new User(User.SupervisorId, "supervisor") {
-            ModifiedBy = "aaa",
-            ModifiedOn = now,
-        };
+        var su = new User(User.SupervisorId, "supervisor") { ModifiedBy = "aaa", ModifiedOn = now };
 
         Check.That(su.ModifiedAsText()).IsEqualTo("aaa, 12/13/2024 11:22:33 AM");
     }
@@ -161,14 +136,7 @@ public class UserTests
     [Test]
     public void Filter_MostlyDefinedUser()
     {
-        var now = new DateTime(
-            2024,
-            12,
-            13,
-            11,
-            22,
-            33
-        );
+        var now = new DateTime(2024, 12, 13, 11, 22, 33);
 
         var us = new User("some-id", "aaa") {
             Password   = "ppp",
@@ -180,7 +148,8 @@ public class UserTests
                     new Role(Role.MachineOperatorId, "operator"), new Role(Role.MachineSetterId, "setter"),
                     new Role(Role.AdministratorId, "admin"),
                 ]
-            ) };
+            ),
+        };
 
         Check.That(us.Filter(null)).IsTrue();
         Check.That(us.Filter("")).IsTrue();
