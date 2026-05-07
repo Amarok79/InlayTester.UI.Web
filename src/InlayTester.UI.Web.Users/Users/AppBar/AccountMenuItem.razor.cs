@@ -24,8 +24,8 @@ public partial class AccountMenuItem
 
     private void UpdateUser()
     {
-        InvokeAsync(
-            () => {
+        InvokeAsync(() =>
+            {
                 mUser = SessionManager.Current;
                 StateHasChanged();
             }

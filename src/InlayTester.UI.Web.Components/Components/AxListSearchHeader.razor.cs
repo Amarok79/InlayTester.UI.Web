@@ -18,7 +18,7 @@ public partial class AxListSearchHeader
     public String? SearchPlaceholder { get; set; }
 
     [Parameter]
-    public EventCallback<String> SearchTextChanged { get; set; }
+    public EventCallback<String?> SearchTextChanged { get; set; }
 
 
     [Parameter]
@@ -47,12 +47,14 @@ public partial class AxListSearchHeader
         }
     }
 
-    private async Task OnSearchTextChanged(String text)
+    private Task SearchTextChangedAsync(String? text)
     {
         if (!Disabled)
         {
             SearchText = text;
-            await SearchTextChanged.InvokeAsync(text);
+            return SearchTextChanged.InvokeAsync(text);
         }
+
+        return Task.CompletedTask;
     }
 }

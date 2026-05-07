@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\InlayTester.Domain\InlayTester.Domain.csproj" />
+        <ProjectReference Include="..\InlayTester.Domain\InlayTester.Domain.csproj" />
     </ItemGroup>
 
 </Project>

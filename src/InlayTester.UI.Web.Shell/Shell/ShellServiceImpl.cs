@@ -13,9 +13,7 @@ internal sealed class ShellServiceImpl : IShell,
     private readonly IShellLoginDialog mLoginDialog;
 
     private readonly DialogOptions mOptions = new() {
-        BackdropClick    = false,
-        CloseOnEscapeKey = true,
-        MaxWidth         = MaxWidth.Medium,
+        BackdropClick = false, CloseOnEscapeKey = true, MaxWidth = MaxWidth.Medium,
     };
 
 

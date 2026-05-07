@@ -41,7 +41,8 @@ public partial class UserList
 
         await RunAsync(
             "USR100",
-            async () => {
+            async () =>
+            {
                 var users = await UserManager.QueryUsersAsync();
                 mUsers = users.OrderBy(x => x.Name).ToObservableCollection();
             },

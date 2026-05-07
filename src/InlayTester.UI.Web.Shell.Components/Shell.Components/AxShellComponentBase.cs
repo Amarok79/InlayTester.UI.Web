@@ -63,7 +63,8 @@ public abstract class AxShellComponentBase : AxBusyStateComponentBase
         return RunAsync(
             errorCode,
             asyncAction,
-            e => {
+            e =>
+            {
                 errorAction.Invoke();
                 return Task.CompletedTask;
             }
@@ -75,7 +76,8 @@ public abstract class AxShellComponentBase : AxBusyStateComponentBase
         return RunAsync(
             errorCode,
             asyncAction,
-            e => {
+            e =>
+            {
                 errorAction?.Invoke(e);
                 return Task.CompletedTask;
             }
