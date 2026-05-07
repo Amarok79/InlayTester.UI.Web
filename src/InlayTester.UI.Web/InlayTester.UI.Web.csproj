@@ -24,14 +24,16 @@
         <DockerfileContext>..\..</DockerfileContext>
         <DockerDebuggeeWorkingDirectory>/app/bin</DockerDebuggeeWorkingDirectory>
         <ContainerRepository>mcr.microsoft.com/dotnet/aspnet</ContainerRepository>
-        <ContainerImageTags>9.0-noble</ContainerImageTags>
+        <ContainerImageTags>10.0-noble</ContainerImageTags>
         <UserSecretsId>62c3958a-5756-4e8d-812a-5b24379d9529</UserSecretsId>
+        <EnableSdkContainerDebugging>True</EnableSdkContainerDebugging>
+        <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:10.0-noble</ContainerBaseImage>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
-        <PackageReference Include="MudBlazor" Version="9.0.0-preview.1" />
-        <PackageReference Include="Serilog" Version="4.3.0" />
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.23.0" />
+        <PackageReference Include="MudBlazor" Version="9.4.0" />
+        <PackageReference Include="Serilog" Version="4.3.1" />
         <PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
         <PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
         <PackageReference Include="Serilog.Extensions.Logging" Version="10.0.0" />
@@ -41,7 +43,7 @@
         <PackageReference Include="StringTokenFormatter" Version="9.0.1" />
         <PackageReference Include="Tommy" Version="3.1.2" />
         <PackageReference Include="Tommy.Extensions" Version="3.1.2" />
-        <PackageReference Include="Toolbelt.Blazor.HotKeys2" Version="6.0.1" />
+        <PackageReference Include="Toolbelt.Blazor.HotKeys2" Version="6.2.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -61,6 +63,10 @@
         <Using Include="MudBlazor" />
         <Using Include="Microsoft.AspNetCore.Components" />
         <Using Include="Microsoft.Extensions.Localization" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ContainerPort Include="8081" />
     </ItemGroup>
 
 </Project>

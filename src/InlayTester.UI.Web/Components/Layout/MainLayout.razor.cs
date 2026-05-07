@@ -45,29 +45,29 @@ public partial class MainLayout
     {
         return new PaletteLight {
             // backgrounds
-            AppbarBackground = "#ffffff",
-            DrawerBackground = "#ffffff",
+            AppbarBackground = "#f5f5f5",
+            DrawerBackground = "#fafafa",
 
             // foregrounds
-            AppbarText    = "#5f6368",
-            DrawerIcon    = "#5f6368",
-            DrawerText    = "#5f6368",
-            TextPrimary   = "#5f6368",
-            ActionDefault = "#5f6368",
+            AppbarText    = "#424242",
+            DrawerIcon    = "#616161",
+            DrawerText    = "#424242",
+            TextPrimary   = "#212121",
+            ActionDefault = "#757575",
 
             // colors
-            Primary   = "#006DAA",
-            Secondary = "#FB8C00",
-            Tertiary  = "#A0CED9",
-            Info      = "#3299ff",
-            Success   = "#0bba83",
-            Warning   = "#D88C00",
-            Error     = "#D83E3E",
-            Dark      = "#27272f",
+            Primary   = "#1976d2",
+            Secondary = "#dc004e",
+            Tertiary  = "#9c27b0",
+            Info      = "#0288d1",
+            Success   = "#2e7d32",
+            Warning   = "#ed6c02",
+            Error     = "#d32f2f",
+            Dark      = "#1a1a1a",
 
             // hover
-            TableHover   = "#00000015",
-            HoverOpacity = 0.20,
+            TableHover   = "#00000010",
+            HoverOpacity = 0.15,
         };
     }
 
